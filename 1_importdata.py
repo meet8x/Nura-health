@@ -15,4 +15,5 @@ sheets = pd.read_excel(excel_file, sheet_name=None)
 for sheet_name, df in sheets.items():
     table_name = sheet_name.lower().replace(" ", "_")  # clean table name
     df.to_sql(table_name, engine, if_exists="replace", index=False)
+
     print(f"✅ Imported sheet '{sheet_name}' into table '{table_name}'")
